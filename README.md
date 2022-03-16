@@ -81,12 +81,6 @@ USE_MINIO=FALSE
 
 # node server
 kill-port 3000
-
-# Angular Client
-kill-port 4200
-
-# postgres
-kill-port 5432
 ```
 
 ## see what is running on a particular port
@@ -108,7 +102,7 @@ Set to the Heroku app name
 ```java
 # client/proxy.json
 
-    "target": "https://file-upload-backend-poc.herokuapp.com/",
+    "target": "https://node-aws-s3-express-uploader.herokuapp.com/",
 ```
 
 ```java
@@ -129,33 +123,13 @@ npm run start
 
 ```
 
-## local development - client frontend
-
-```java
-cd client
-
-npm run start
-
-http://localhost:4200/
-```
-
 ## Create the app on heroku using the CLI
 
-app will be named `file-upload-with-bucketeer`
+app will be named `node-aws-s3-express-uploader`
 
 ```java
-heroku apps:create file-upload-with-bucketeer
-Creating ⬢ file-upload-with-bucketeer... done
-```
-
-### Deploy your application
-
-Commit your code to the repository and deploy it to Heroku using Git.
-
-```java
-git add .
-git commit -am "add heroku"
-git push heroku main
+heroku apps:create node-aws-s3-express-uploader
+Creating ⬢ node-aws-s3-express-uploader... done
 ```
 
 ## Need to set the Heroku environment variables:
@@ -164,7 +138,7 @@ Initially they are empty
 
 ```java
 heroku config
-=== file-upload-with-bucketeer Config Vars
+=== node-aws-s3-express-uploader Config Vars
 
 ```
 
@@ -180,12 +154,22 @@ USE_MINIO=FALSE
 
 ```java
 heroku config:set DB_CONNECTION="mongodb+srv://<userid>:<password>@cluster0.zadqe.mongodb.net/myFirstDatabase?retryWrites=true&w=majority"
-Setting DB_CONNECTION and restarting ⬢ file-upload-with-bucketeer... done, v5
+Setting DB_CONNECTION and restarting ⬢ node-aws-s3-express-uploader... done, v5
 DB_CONNECTION: mongodb+srv://<userid>:<password>@cluster0.zadqe.mongodb.net/myFirstDatabase?retryWrites=true&w=majority
 
 heroku config:set AWS_BUCKET_NAME="my-site-images-test"
-Setting AWS_BUCKET_NAME and restarting ⬢ file-upload-with-bucketeer... done, v6
+Setting AWS_BUCKET_NAME and restarting ⬢ node-aws-s3-express-uploader... done, v6
 AWS_BUCKET_NAME: my-site-images-test
+```
+
+### Deploy your application
+
+Commit your code to the repository and deploy it to Heroku using Git.
+
+```java
+git add .
+git commit -am "add heroku"
+git push heroku main
 ```
 
 ## view Heroku logs
@@ -199,18 +183,18 @@ heroku logs --tail
 https://devcenter.heroku.com/articles/language-runtime-metrics-nodejs#getting-started
 
 ```java
-heroku labs:enable "runtime-heroku-metrics" -a file-upload-with-bucketeer
-heroku labs:enable "nodejs-language-metrics" -a file-upload-with-bucketeer
+heroku labs:enable "runtime-heroku-metrics" -a node-aws-s3-express-uploader
+heroku labs:enable "nodejs-language-metrics" -a node-aws-s3-express-uploader
 ```
 
 ```java
-heroku labs:enable "runtime-heroku-metrics" -a file-upload-with-bucketeer
+heroku labs:enable "runtime-heroku-metrics" -a node-aws-s3-express-uploader
 
-Enabling runtime-heroku-metrics for file-upload-with-bucketeer... done
+Enabling runtime-heroku-metrics for node-aws-s3-express-uploader... done
 
-heroku labs:enable "nodejs-language-metrics" -a file-upload-with-bucketeer
+heroku labs:enable "nodejs-language-metrics" -a node-aws-s3-express-uploader
 
-Enabling nodejs-language-metrics for file-upload-with-bucketeer... done
+Enabling nodejs-language-metrics for node-aws-s3-express-uploader... done
 ```
 
 ## Redeploy
