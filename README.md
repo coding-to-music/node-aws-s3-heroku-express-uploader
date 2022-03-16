@@ -4,6 +4,10 @@
 
 https://github.com/coding-to-music/node-aws-s3-heroku-express-uploader
 
+https://node-aws-s3-express-uploader.herokuapp.com/account
+
+https://node-aws-s3-express-uploader.herokuapp.com/sign-s3
+
 By Will Webberley https://github.com/willwebberley
 
 https://github.com/willwebberley/NodeDirectUploader
