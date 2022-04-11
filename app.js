@@ -10,6 +10,7 @@
  * Import required packages.
  * Packages should be installed with "npm install".
  */
+require("dotenv").config();
 const express = require("express");
 const aws = require("aws-sdk");
 
@@ -39,13 +40,19 @@ aws.config.region = "us-east-1";
 /*
  * Load the S3 information from the environment variables.
  */
-const S3_BUCKET = process.env.S3_BUCKET;
+const S3_BUCKET = process.env.STORAGE_BUCKET_NAME;
+
+console.log(`S3_BUCKET: ${S3_BUCKET}`);
+console.log(
+  `process.env.STORAGE_BUCKET_NAME:`,
+  process.env.STORAGE_BUCKET_NAME
+);
 
 /*
  * Respond to GET requests to /account.
  * Upon request, render the 'account.html' web page in views/ directory.
  */
-app.get("/account", (req, res) => res.render("account.html"));
+app.get("/", (req, res) => res.render("index.html"));
 
 /*
  * Respond to GET requests to /sign-s3.

@@ -2,6 +2,7 @@
   "name": "node-aws-s3-heroku-express-uploader",
   "version": "0.0.1",
   "main": "app.js",
+  "homepage": "https://node-aws-s3-express-uploader.herokuapp.com/",
   "private": true,
   "scripts": {
     "deploy": "git add . && git commit -m Heroku && git push && git push heroku && heroku logs --tail --remote heroku",
@@ -10,6 +11,7 @@
   },
   "dependencies": {
     "aws-sdk": "2.x",
+    "dotenv": "^16.0.0",
     "ejs": "2.x",
     "express": "4.x",
     "kill-port": "^1.6.1",
