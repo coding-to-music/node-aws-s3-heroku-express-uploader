@@ -5,6 +5,7 @@
   "private": true,
   "scripts": {
     "deploy": "git add . && git commit -m Heroku && git push && git push heroku && heroku logs --tail --remote heroku",
+    "dev": "nodemon app.js",
     "start": "node app.js"
   },
   "dependencies": {

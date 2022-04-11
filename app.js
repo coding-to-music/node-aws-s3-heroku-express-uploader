@@ -86,9 +86,3 @@ app.get("/sign-s3", (req, res) => {
 app.post("/save-details", (req, res) => {
   // TODO: Read POSTed form data and do something useful
 });
-
-// server
-app.listen(port, () => {
-  // console.log(`Listening on port ${PORT}`);
-  console.log(`💥 Application is listening on port http://localhost:${port}`);
-});
