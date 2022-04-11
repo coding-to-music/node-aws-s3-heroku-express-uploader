@@ -13,6 +13,8 @@
 const express = require("express");
 const aws = require("aws-sdk");
 
+const port = process.env.PORT || 3003;
+
 /*
  * Set-up and run the Express app.
  */
@@ -20,7 +22,13 @@ const app = express();
 app.set("views", "./views");
 app.use(express.static("./public"));
 app.engine("html", require("ejs").renderFile);
-app.listen(process.env.PORT || 3000);
+// app.listen(process.env.PORT || 3000);
+
+// server
+app.listen(port, () => {
+  // console.log(`Listening on port ${PORT}`);
+  console.log(`💥 Application is listening on port http://localhost:${port}`);
+});
 
 /*
  * Configure the AWS region of the target bucket.
@@ -77,4 +85,10 @@ app.get("/sign-s3", (req, res) => {
  */
 app.post("/save-details", (req, res) => {
   // TODO: Read POSTed form data and do something useful
+});
+
+// server
+app.listen(port, () => {
+  // console.log(`Listening on port ${PORT}`);
+  console.log(`💥 Application is listening on port http://localhost:${port}`);
 });
