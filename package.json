@@ -5,8 +5,9 @@
   "homepage": "https://node-aws-s3-express-uploader.herokuapp.com/",
   "private": true,
   "scripts": {
-    "deploy": "git add . && git commit -m Heroku && git push && git push heroku && heroku logs --tail --remote heroku",
+    "old:deploy": "git add . && git commit -m Heroku && git push && git push heroku && heroku logs --tail --remote heroku",
     "dev": "nodemon app.js",
+    "deploy": "git add . && git commit -m Build && git push",
     "start": "node app.js"
   },
   "dependencies": {
